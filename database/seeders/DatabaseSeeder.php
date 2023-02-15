@@ -20,5 +20,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+        // populate categories and projects table with seed data
+        $this->call([
+            CategorySeeder::class,
+            ProjectSeeder::class
+        ]);
     }
 }

@@ -6,6 +6,7 @@
             </div>
             <div class="flex-1 items-center justify-center text-center">
               Display Project details and links
+              <x-projects.project-card :project="$project" />
             </div>
           </div>
     </x-slot>

@@ -4,8 +4,8 @@
             <div class="mt-6">
               @if ($category)
               <div class="flex flex-col">
-                <a class="w-full items-end" href="/projects">Back to Projects</a>
-                <h1 class="text-2xl font-bold mb-4">{{ $category->name }}</h1>
+                <a class="w-full items-end" href="/projects">Back to All Projects</a>
+                <h1 class="text-2xl font-bold mb-4 text-center">Category: {{ $category->name }}</h1>
               </div>
               @endif
               <section class="grid grid-cols-1 md:grid-cols-2 gap-2">

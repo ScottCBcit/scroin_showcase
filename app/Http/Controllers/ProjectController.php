@@ -13,7 +13,8 @@ class ProjectController extends Controller
     public function index()
     {
         return view('projects.index')
-        ->with('projects', Project::all());
+        ->with('projects', Project::all())
+        ->with('category', null);
     }
 
     public function show(Project $project)

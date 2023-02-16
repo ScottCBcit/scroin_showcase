@@ -25,3 +25,17 @@ class ProjectFactory extends Factory
         ];
     }
 }
+
+
+// public function definition()
+// {
+//     $bodyArray = fake()->paragraphs(3);
+//     $body = join('', array_map(function($paragraph) {
+//         return '<p>' . $paragraph . '</p>';
+//     }, $bodyArray));
+//     return [
+//         'title' => fake()->company() . ' ' . fake()->companySuffix(),
+//         'excerpt' => fake()->catchPhrase(),
+//         'body' => $body
+//     ];
+// }

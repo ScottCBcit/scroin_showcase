@@ -17,9 +17,11 @@
             }
         </style>
     </head>
-    <body class="antialiased bg-gray-100  flex-col">
+    <body class="antialiased bg-gray-100  flex flex-col min-h-screen">
         <x-partials.header />
+        <main class="flex-grow p-5">
         {{ $content }}
-        <x-partials.footer class="flex justify-end"/>
+        </main>
+        <x-partials.footer class="mt-auto flex-shrink-0"/>
     </body>
 </html>

@@ -2,46 +2,30 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Category;
 
 class ProjectController extends Controller
 {
+    
     public function index()
     {
-
-        $projects = [
-            [
-                'id' => 0,
-                'title' => 'Node.js Yearbook',
-                'description' => 'Details coming soon...',
-                'is_published' => false
-            ],
-            [
-                'id' => 1,
-                'title' => 'React Movie App',
-                'description' => 'More info on the way...',
-                'is_published' => false
-            ],
-            [
-                'id' => 3,
-                'title' => 'Laravel Portfolio Back-End',
-                'description' => 'In progress.  Stay tuned.',
-                'is_published' => false
-            ]
-        ];
-
         return view('projects.index')
-            ->with('projects', $projects);
+        ->with('projects', Project::all())
+        ->with('category', null);
     }
 
-    public function show($project)
+    public function show(Project $project)
     {
-        $project= [
-            'id' => 4,
-            'title' => 'Vue.js Portfolio Front-End',
-            'description' => '...',
-            'is_published' => false
-        ];
-        return view('projects.project', ['project' => $project]);
+        return view('projects.project',['project' => $project]);
+    }
+
+    public function listByCategory(Category $category)
+    {
+        return view('projects.index')
+        ->with('projects', $category->projects)
+        ->with('category', $category);
     }
 }

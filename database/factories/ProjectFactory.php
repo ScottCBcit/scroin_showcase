@@ -16,12 +16,17 @@ class ProjectFactory extends Factory
      */
     public function definition()
     {
+        $title = fake()->unique()->company() . ' ' . fake()->companySuffix();
         $bodyArray = fake()->paragraphs(3);
         $body = '<p>' . join('</p></p>', $bodyArray ) . '</p>';
-        return [
-            'title' => fake()->company() . ' ' . fake()->companySuffix(),
-            'excerpt' => fake()->catchPhrase(),
-            'body' => $body
+        $excerpt = fake()->catchPhrase();
+        $slug = Str::slug($title, '-');
+
+        return [        
+            'title' => $title,        
+            'excerpt' => $excerpt,        
+            'body' => $body,        
+            'slug' => $slug,    
         ];
     }
 }

@@ -10,7 +10,7 @@
               @endif
               <section class="grid grid-cols-1 md:grid-cols-2 gap-2">
                 @foreach ($projects as $project)
-                  <x-projects.project-card :project="$project" :showBody="false"/>
+                  <x-projects.project-card :project="$project" :showBody="false" :showExcerpt="true"/>
                 @endforeach
               </section>
               @if (count($projects))
